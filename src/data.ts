@@ -18,6 +18,14 @@ export const products: Product[] = [
   ppf('t75m', 'T75M', '/images/ppf-t75m.webp', 'Matte', '7.5 mil', '5 years', ['Matte appearance']),
   ppf('a75', 'A75', '/images/ppf-t75.webp', 'Gloss', '7.5 mil', '5 years', ['Hydrophobic surface']),
   ppf('a85', 'A85', '/images/ppf-t85.webp', 'Gloss', '8.5 mil', '8 years', ['Hydrophobic surface']),
+  {
+    slug: 'a75m', name: 'A75M', category: 'Paint protection film', image: '/images/ppf-a75m.webp',
+    alt: 'Illustrative vehicle image from the paint protection film catalog',
+    summary: 'Paint protection film',
+    description: 'A TPU-based film for automotive painted surfaces, presented in the AUTO Tailor paint protection film catalog. Confirm the finish for the product supplied.',
+    specs: [['Finish', 'To be confirmed'], ['Catalog thickness', '7.5 mil'], ['Catalog warranty period', '5 years']],
+    features: ['TPU-based construction', 'Heat-assisted scratch repair coating', 'Hydrophobic surface'],
+  },
   ppf('at-super-black', 'AT Super Black', '/images/ppf-black.webp', 'Gloss black', '7.5 mil', '5 years', ['Black color layer']),
   ppf('at-super-matte-black', 'AT Super Matte Black', '/images/ppf-matte-black.webp', 'Matte black', '7.5 mil', '5 years', ['Black color layer']),
   {
@@ -41,7 +49,7 @@ export const products: Product[] = [
   },
   {
     slug: 't-window-film', name: 'T series', category: 'Window film', image: '/images/window-film.webp', alt: 'Vehicle on a road, from the window film catalog',
-    summary: 'Nano-ceramic window film', description: 'The T series combines dyed film and nano-ceramic technology. The catalog lists five shades with varying light transmission.',
+    summary: 'Nano-ceramic window film', description: 'The T series uses nano-ceramic technology, according to the catalog. Five shades are listed with varying light transmission.',
     features: ['Nano-ceramic construction', 'Five listed shades', 'Catalog thickness: 2 mil'],
     models: [['T 9070','71%','8%','99%','90%','44%'],['T 5090','53%','8%','99%','91%','52%'],['T 3590','35%','8%','99%','89%','55%'],['T 2090','20%','8%','99%','91%','58%'],['T 30590','7%','8%','99%','92%','62%']],
   },

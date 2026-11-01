@@ -3,3 +3,4 @@
 @media(max-width:420px){.product-grid{grid-template-columns:1fr}.product-image{aspect-ratio:1.35}.hero h1{font-size:44px}.footer-grid{gap:28px 12px}.category-nav{font-size:13px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.product-image img{transition:none}}
 .detail-section > div{min-width:0}
+.film-illustration{background:#fff}.film-illustration img{object-fit:contain}
