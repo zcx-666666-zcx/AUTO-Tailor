@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+const { title, description = 'Explore AUTO Tailor paint protection and automotive window films.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#f4f5f3" />
+    <title>{title ? `${title} | AUTO Tailor` : 'AUTO Tailor | Automotive films'}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner wrap">
+        <a class="brand" href="/" aria-label="AUTO Tailor home"><span class="brand-mark">AT</span><span>AUTO<br />TAILOR</span></a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="/products/">Products</a><a href="/technology/">Brand &amp; technology</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation"><span></span><span></span></summary>
+          <nav aria-label="Mobile navigation"><a href="/products/">Products</a><a href="/technology/">Brand &amp; technology</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></nav>
+        </details>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div><a class="brand brand-footer" href="/"><span class="brand-mark">AT</span><span>AUTO<br />TAILOR</span></a><p>Automotive films for a more considered finish.</p></div>
+        <div><strong>Explore</strong><a href="/products/">Products</a><a href="/technology/">Brand &amp; technology</a></div>
+        <div><strong>Information</strong><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+      </div>
+      <div class="wrap footer-bottom"><span>© {new Date().getFullYear()} AUTO Tailor</span><span>Product information is subject to confirmation.</span></div>
+    </footer>
+  </body>
+</html>

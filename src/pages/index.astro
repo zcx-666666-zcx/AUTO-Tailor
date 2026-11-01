@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products } from '../data';
+const featured = ['t75', 'color-tpu', 'ae-window-film'].map(slug => products.find(p => p.slug === slug)!);
+---
+<Base description="Discover AUTO Tailor automotive paint protection, color TPU and window films.">
+  <section class="hero">
+    <img src="/images/window-hero.webp" alt="A vehicle shown in the AUTO Tailor window film catalog" fetchpriority="high" />
+    <div class="hero-shade"></div><div class="wrap hero-inner"><div class="hero-copy"><p class="hero-kicker">Automotive films</p><h1>AUTO Tailor</h1><p>Considered protection.<br />A finish made your own.</p><a class="button light" href="/products/">Explore the collection <span aria-hidden="true">↗</span></a></div></div>
+  </section>
+  <section class="intro wrap"><div><span class="section-label">Made for the road</span><h2>Protection and expression, in balance.</h2></div><p>From clear paint protection to color TPU and automotive window films, explore films designed around the surfaces and details of a vehicle.</p></section>
+  <section class="section wrap"><div class="section-heading"><div><span class="section-label">The collection</span><h2>Find your film</h2></div><a class="text-link" href="/products/">View all products <span aria-hidden="true">↗</span></a></div><div class="product-grid">{featured.map(product => <ProductCard product={product} />)}</div></section>
+  <section class="material-band"><div class="wrap material-grid"><div><span class="section-label">Materials &amp; application</span><h2>Thought through,<br />layer by layer.</h2></div><div><p>Film construction, finish and installation all shape the final result. Our catalog brings these details together to help you compare the options.</p><a class="text-link" href="/technology/">Explore the technology <span aria-hidden="true">↗</span></a></div></div></section>
+  <section class="section wrap closing"><div><span class="section-label">Before you choose</span><h2>Details make the difference.</h2><p>Compare finishes, light transmission and catalog specifications, then confirm the right film for the vehicle and its intended use.</p></div><a class="button dark" href="/faq/">Read common questions <span aria-hidden="true">↗</span></a></section>
+</Base>

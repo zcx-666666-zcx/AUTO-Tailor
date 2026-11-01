@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+const items = [
+ ['What is paint protection film?', 'Paint protection film is applied to painted vehicle surfaces. The AUTO Tailor catalog presents TPU-based films in gloss, matte and black finishes.'],
+ ['What is the difference between clear PPF and color TPU?', 'Clear paint protection film is intended to protect painted surfaces while retaining their appearance. Color TPU combines a color layer with a TPU film structure to change the vehicle’s appearance.'],
+ ['Can every scratch repair itself?', 'No. The catalogs describe heat-assisted repair coatings, but the result depends on the film, the damage and conditions. Deep damage may require professional attention.'],
+ ['How do I choose a window film shade?', 'Compare the visible light transmission values listed for each model, and check the regulations for each window in your location. Specifications should be confirmed for the product supplied.'],
+ ['How should I care for the film after installation?', 'Follow your installer’s instructions. The PPF catalog advises avoiding abrasive brushes and cleaners; the window film catalog advises not cleaning the film for at least 30 days after installation.'],
+ ['What does the listed warranty cover?', 'Catalog warranty periods vary by product and may have conditions and exclusions. Confirm the current written warranty, authorized installation requirements and local availability before purchase.'],
+];
+---
+<Base title="FAQ" description="Frequently asked questions about AUTO Tailor automotive films.">
+  <section class="page-heading wrap narrow-heading"><span class="section-label">Help &amp; information</span><h1>Frequently asked questions</h1><p>A few useful starting points for comparing and caring for automotive films.</p></section>
+  <section class="wrap faq-list">{items.map(([question, answer]) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</section>
+  <section class="section wrap closing"><div><h2>Explore the collection</h2><p>Browse the catalog by material and application.</p></div><a class="button dark" href="/products/">View products <span aria-hidden="true">↗</span></a></section>
+</Base>

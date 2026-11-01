@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products } from '../../data';
+const categories = [
+  { name: 'Paint protection film', copy: 'Clear and black finishes for automotive painted surfaces.' },
+  { name: 'Color TPU film', copy: 'Color and paint protection brought together.' },
+  { name: 'Window film', copy: 'A choice of automotive window film technologies and shades.' },
+] as const;
+---
+<Base title="Products" description="Browse AUTO Tailor paint protection, color TPU and automotive window film series.">
+  <section class="page-heading wrap"><span class="section-label">The collection</span><h1>Automotive films</h1><p>Explore the materials, finishes and specifications in the AUTO Tailor catalogs.</p><nav class="category-nav" aria-label="Product categories"><a href="#paint-protection-film">Paint protection</a><a href="#color-tpu-film">Color TPU</a><a href="#window-film">Window film</a></nav></section>
+  {categories.map(category => <section class="section wrap catalog-section" id={category.name.toLowerCase().replaceAll(' ', '-')}><div class="section-heading"><div><h2>{category.name}</h2><p>{category.copy}</p></div><span class="subtle">{products.filter(p => p.category === category.name).length} {category.name === 'Window film' ? 'series' : products.filter(p => p.category === category.name).length === 1 ? 'option' : 'options'}</span></div><div class="product-grid">{products.filter(p => p.category === category.name).map(product => <ProductCard product={product} />)}</div></section>)}
+  <div class="wrap footnote">Catalog images are illustrative. Specifications and availability should be confirmed for the relevant market and product.</div>
+</Base>

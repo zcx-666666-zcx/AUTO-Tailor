@@ -1,0 +1,8 @@
+---
+import type { Product } from '../data';
+const { product } = Astro.props as { product: Product };
+---
+<a class="product-card" href={`/products/${product.slug}/`}>
+  <div class="product-image"><img src={product.image} alt={product.alt} loading="lazy" /></div>
+  <div class="product-card-copy"><span class="subtle">{product.category}</span><div class="card-title"><h3>{product.name}</h3><span aria-hidden="true">↗</span></div><p>{product.summary}</p></div>
+</a>
