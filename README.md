@@ -21,6 +21,13 @@ npm run preview
 
 首次配置须先核验 DNS 指向服务器、80/443 可达、Nginx 配置有效且域名未被占用。使用独立的 HTTP 虚拟主机和 webroot 方式签发证书，成功后再添加独立 HTTPS 虚拟主机；每次修改执行 `nginx -t` 后才 reload。证书签发或配置检查失败时停止，不覆盖其他站点。回退时将 `current` 切回先前版本；若首次上线则移除本项目启用的虚拟主机链接，验证 Nginx 后 reload。不要更改现有站点、全局防火墙、SSH 或其他服务配置。
 
+### 2026-11-01 首次上线记录
+
+- 线上域名：`https://autotailor.zhanhui.cloud/`，静态版本目录 `/srv/autotailor/releases/20261101-68ef921`，`/srv/autotailor/current` 指向该目录；对应网站源码提交 `68ef921`。
+- 独立配置 `/etc/nginx/sites-available/autotailor.zhanhui.cloud`，启用链接位于 `sites-enabled`；初始 HTTP 配置备份为同目录下的 `autotailor.zhanhui.cloud.http-initial`。停用本站可移除本项目的启用链接并在 `nginx -t` 成功后重载；保留版本文件和证书以便恢复。
+- Let's Encrypt 证书签发成功，有效期至 2027-01-30 09:11:35 UTC。使用 webroot `/srv/autotailor/acme`，独立续期重载钩子为 `/etc/letsencrypt/renewal-hooks/deploy/autotailor-reload-nginx`；`certbot.timer` 已启用，尚未执行续期模拟。
+- 部署后 HTTP 跳转 HTTPS，首页、示例图片与其他站点首页访问成功；详细内容和素材的限制见来源清单。日后操作前须重新核验服务器和 DNS 的实时状态。
+
 ## 待确认
 
 - 取得正式联系方式及其使用授权后再添加可用的询盘入口。
